@@ -1,0 +1,49 @@
+﻿@model AON_coding_test.Models.StringModel
+@using AON_coding_test.Models;
+
+@{
+    ViewBag.Title = "AON Coding test";
+}
+
+<div class="page-header">
+    <h1>@ViewBag.Title</h1>
+</div>
+
+
+@using (Html.BeginForm("DisplayResults", "Home", FormMethod.Post))
+{
+
+    <table>
+        <tr>
+            <td>Input string</td>
+            <td>
+                @Html.TextBoxFor(x => x.InputString, true)
+            </td>
+            <td>
+                @Html.ValidationMessage("InputString")
+            </td>
+    </tr>
+
+    <tr>
+        <td>Start index</td>
+
+        <td>@Html.TextBoxFor(x => x.StartIndex, true)</td>
+        <td>
+            @Html.ValidationMessage("StartIndex")
+        </td>
+    </tr>
+
+    <tr>
+        <td>End Index</td>
+        <td>
+            @Html.TextBoxFor(x => x.EndIndex, true)
+        </td>
+        <td>
+            @Html.ValidationMessage("EndIndex")
+        </td>
+</tr>
+<tr>
+    <td> <input id="submitButton" type="submit" value="Submit" /></td>
+</tr>
+</table>
+}
